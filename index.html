@@ -1,31 +1,18 @@
-function yes() {
-var button = document.getElementById('test');
-var name = document.getElementById('name');
-var age = document.getElementById('age');
-var location = document.getElementById('location');
-    var str = 'Hello ' + name.value + 
-        ', you are ' + age.value +
-        ' years old and from ' + location.value;
-    document.getElementById('test').innerHTML=str;
-};
+<!DOCTYPE html>
 <html>
+<head>
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+</head>
 <body>
-<label>
-    Enter name: 
-    <input id="name" />
-</label>
-<br />
-<label>
-    Enter age: 
-    <input id="age" />
-</label>
-<br />
-<label>
-    Enter location: 
-    <input id="location" />
-</label>
-<br />
-<button onclick="yes()">Test</button>
-<p id="test"></p>
+
+  <div class='printchatbox'>CHANGE ME</div>
+  <input type='text' name='fname' class='chatinput'>
+
+<script type="script/javascript">
+  $('.chatinput').keyup(function(event) {
+    newText = event.target.value;
+    $('.printchatbox').text(newText);
+  });
+</script>
 </body>
 </html>
