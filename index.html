@@ -102,23 +102,7 @@
 				serial.className = "serial";
 				serial.textContent = "Image " + (i + 1);
 
-                //Create textarea:
-                var textInput = document.createElement("textarea")
-                textInput.ATTRIBUTE_NODE = 'name="instapic" id="instapic" cols="40" rows="10"'
-                textInput.name = "For Writing Purpose";
-                textInput.cols = 80;
-                textInput.rows = 7;
-
-				// Create container element for the image and serial number
-				var container = document.createElement("div");
-				container.appendChild(img);
-				container.appendChild(serial);
-				container.appendChild(p);
-                container.appendChild(textInput);
-                container.className = "box";                
-
-				// Add the container to the image container on the web page
-				document.getElementById("image-container").appendChild(container);
+               
 			}
 		}
 	</script>
