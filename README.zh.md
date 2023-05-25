@@ -37,26 +37,26 @@
   </a>
 </p>
 
-Convenience method(or Video object) to get metadata and thumbnails of HTML5 video Blob.
+通过HTML5的Blob获取视频元数据和帧缩略图。
 
-English | [简体中文](https://github.com/wangweiwei/video-metadata-thumbnails/blob/master/README.zh.md)
+[English](https://github.com/wangweiwei/video-metadata-thumbnails/blob/master/README.md) | 简体中文
 
-## Environment Support
+## 浏览器支持
 
-- Microsoft Edge
-- Google Chrome
-- Safari(Not perfect)
-    - need to wait for the video to finish playing
-    - can't use all parameters
-- Firfox(Not perfect)
-    - need to wait for the video to finish playing
-    - can't use all parameters
+- 微软Edge
+- 谷歌Chrome
+- Safari(非完美支持)
+    - 需要等待视频播放完毕
+    - 参数非完美支持 
+- Firfox(非完美支持)
+    - 需要等待视频播放完毕
+    - 参数非完美支持 
     
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br> Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Firefox |
 | --- | --- | --- | --- |
 | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
 
-## **Installation**
+## **安装**
 
 ```shell
 npm install --save video-metadata-thumbnails
@@ -68,11 +68,11 @@ or
 yarn add video-metadata-thumbnails
 ```
 
-## **Usage**
+## **使用方法**
 
-### getMetadata method &  getThumbnails method
+### 通过getMetadata和getThumbnails方法
 
-​	Add `video-metadata-thumbnails.iife.js` to your document and get the metadata or thumbnails value of the promise returned by `then`:
+​	将 `video-metadata-thumbnails.iife.js`添加到你的`script`标签中，然后通过`Promise`的 `then`获取 元数据或者视频缩略图：
 
 ```html
 <input type="file" onchange="onChange(this.files)" />
@@ -89,7 +89,7 @@ function onChange(files) {
 </script>
 ```
 
-​	Alternatively, you can import(or require) `video-metadata-thumbnails` by getting it from `npm` :
+​	当然你可以通过`import`（或者`reqire`)`video-metadata-thumbnails` 来使用：
 
 ```javascript
 import { getMetadata, getThumbnails } from 'video-metadata-thumbnails';
@@ -101,9 +101,10 @@ const thumbnails = await getThumbnails(blob, {
 console.log('Metadata: ', metadata);
 console.log('Thumbnails: ', thumbnails);
 ```
-### Video Object
 
-​	Import(or require) `video-metadata-thumbnails` by getting it from `npm`
+### 通过Video对象
+
+​	通过导入`Video`来自行初始化视频对象，然后通过`getMetadata`和`getThumbnails`获取元数据和帧缩略图：
 
 ```      javascript
 import { Video } from 'video-metadata-thumbnails';
@@ -115,39 +116,38 @@ console.log('Thumbnails:', await video.getThumbnails({
 }))
 ```
 
-## **Thumbnails' Options**
+## **缩略图选项**
 
 * quality
-  * type: number
-  * default: 0.7
-  * description: video thumbnails' quality
+  * 类型: number
+  * 默认值: 0.7
+  * 描述: 视频缩略图的质量
 * interval
-  * type: number
-  * default: 1
-  * description: time interval
+  * 类型: number
+  * 默认值: 1
+  * 描述: 获取帧图片的时间间隔
 * scale
-  * type: number
-  * default: 0.7
-  * description: video thumbnails' scale
+  * 类型: number
+  * 默认值: 0.7
+  * 描述: 帧图片的缩放值
 * start
-  * type: number
-  * default: 0
-  * description: start frame
+  * 类型: number
+  * 默认值: 0
+  * 描述: 获取帧图片的起始帧
 * end
-  * type: number
-  * default: 0
-  * description: the end of frame
+  * 类型: number
+  * 默认值: 0
+  * 描述: 获取帧图片的终止帧
 
-## **Example**
+## **例子**
 
-[![Example Online](https://img.shields.io/badge/-Example--Online-blue?style=for-the-badge&logo=internet-explorer)](https://www.ellow.cn/examples/video-metadata-thumbnails/index.html)
+[![Example Online](https://img.shields.io/badge/-在线例子-blue?style=for-the-badge&logo=internet-explorer)](https://www.ellow.cn/examples/video-metadata-thumbnails/index.html)
 
-## **⚠️  Notice**
+## **⚠️  注意**
+​	需要浏览器支持`Blob`对象
 
-​	`Blob` object is required in browser.
+## **许可**
 
-
-## **License**
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/wangweiwei/video-metadata-thumbnails/blob/master/LICENSE)
 
 Copyright (c) 2020-present, Weiwei Wang 
