@@ -1,11 +1,31 @@
+function yes() {
 var button = document.getElementById('test');
 var name = document.getElementById('name');
 var age = document.getElementById('age');
 var location = document.getElementById('location');
-
-button.onclick = function () {
     var str = 'Hello ' + name.value + 
         ', you are ' + age.value +
         ' years old and from ' + location.value;
-    alert(str);
+    document.getElementById('test').innerHTML=str;
 };
+<html>
+<body>
+<label>
+    Enter name: 
+    <input id="name" />
+</label>
+<br />
+<label>
+    Enter age: 
+    <input id="age" />
+</label>
+<br />
+<label>
+    Enter location: 
+    <input id="location" />
+</label>
+<br />
+<button onclick="yes()">Test</button>
+<p id="test"></p>
+</body>
+</html>
